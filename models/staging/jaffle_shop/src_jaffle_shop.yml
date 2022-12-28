@@ -6,7 +6,19 @@ sources:
     schema: default
     tables:
       - name: jaffle_shop_customers
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
       - name: jaffle_shop_orders
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+              
 
       #### The default datasets in DataBricks did not provide the soource freshness (time data loaded into EDL)
       #### If the source freshness is provided in the column name "_etl_loaded_at", the implementation is as follows.
