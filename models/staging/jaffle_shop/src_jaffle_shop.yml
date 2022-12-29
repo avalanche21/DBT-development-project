@@ -2,19 +2,23 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: a clone of an application database
     # database: hive_metastore # If you don't specify the schema, DBT will use the "name" as the alias for th schema
     schema: default
     tables:
       - name: jaffle_shop_customers
         columns:
           - name: id
+            description: the primary key for the raw customers data
             tests:
               - unique
               - not_null
 
       - name: jaffle_shop_orders
+        description: the raw orders data
         columns:
           - name: id
+            description: the primary key for the raw orders data
             tests:
               - unique
               - not_null
